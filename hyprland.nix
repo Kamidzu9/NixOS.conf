@@ -214,7 +214,7 @@
     # See https://wiki.hyprland.org/Configuring/Keywords/
     $mainMod = SUPER # Sets "Windows" key as main modifier
 
-    bind = $mainMod, W, exec, /home/mischa/.config/hypr/scripts/random-wallpaper.sh
+    bind = $mainMod, W, exec, sh $HOME/.config/hypr/scripts/random-wallpaper.sh
 
     # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
     bind = $mainMod, Q, exec, $terminal
