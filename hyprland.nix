@@ -51,7 +51,9 @@
     # exec-once = $terminal
     # exec-once = nm-applet &
     # exec-once = waybar & hyprpaper & firefox
-    exec-once = hyprpaper
+    exec-once = hyprpaper &
+    exec-once = waybar &
+    exec-once = sleep 1 && nm-applet --indocator &
 
 
     #############################
@@ -168,8 +170,9 @@
 
     # https://wiki.hyprland.org/Configuring/Variables/#misc
     misc {
-        force_default_wallpaper = -1 # Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo = false # If true disables the random hyprland logo / anime girl background. :(
+        force_default_wallpaper = 0 # Set to 0 or 1 to disable the anime mascot wallpapers
+        disable_hyprland_logo = true # If true disables the random hyprland logo / anime girl background. :(
+	disable_splash_rendering = true
     }
 
 
@@ -180,9 +183,9 @@
     # https://wiki.hyprland.org/Configuring/Variables/#input
     input {
         kb_layout = de, ua
-        kb_variant =
+	kb_variant = 
         kb_model =
-        kb_options =
+        kb_options = grp:win_space_toggle
         kb_rules =
 
         follow_mouse = 1
@@ -213,11 +216,12 @@
 
     # See https://wiki.hyprland.org/Configuring/Keywords/
     $mainMod = SUPER # Sets "Windows" key as main modifier
-
+    
+    bind = $mainMod, Q, exec, sh $HOME/.config/hypr/scripts/toggle-waybar.sh
     bind = $mainMod, W, exec, sh $HOME/.config/hypr/scripts/random-wallpaper.sh
 
     # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-    bind = $mainMod, Q, exec, $terminal
+    bind = $mainMod, RETURN, exec, $terminal
     bind = $mainMod, C, killactive,
     bind = $mainMod, M, exit,
     bind = $mainMod, E, exec, $fileManager

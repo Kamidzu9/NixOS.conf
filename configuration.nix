@@ -95,8 +95,8 @@ in
       PCIE_ASPM_ON_BAT = "powersave";
 
       # Battery charge thresholds (Lenovo‑style)
-      START_CHARGE_THRESH_BAT0 = 60;
-      STOP_CHARGE_THRESH_BAT0  = 80;
+      START_CHARGE_THRESH_BAT0 = 79;
+      STOP_CHARGE_THRESH_BAT0  = 86;
     };
   };
 
@@ -112,6 +112,7 @@ in
 
   # Enable networking
   networking.networkmanager.enable = true;
+  services.dbus.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
@@ -147,6 +148,10 @@ in
     scrollMethod = "twofinger";
   };
 
+  services.devmon.enable = true;
+  services.gvfs.enable = true; 
+  services.udisks2.enable = true;
+
   # Configure console keymap
   console.keyMap = "de";
 
@@ -170,6 +175,13 @@ in
     wofi
     curl
     cmake
+    openjdk
+    networkmanagerapplet
+    networkmanager
+    iw                    # для сканування Wi-Fi
+    wirelesstools
+    xwayland
+    waybar
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

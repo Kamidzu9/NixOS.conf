@@ -11,13 +11,14 @@ in
     ./hyprland.nix
     ./hyprpaper.nix
     ./wallpaper.nix
+    ./waybar.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
 
   # Пакети, які хочеш мати в $HOME
   home.packages = with pkgs; [
-    wget neovim starship git fastfetch adwaita-icon-theme apostrophe google-chrome docker nodejs_23 yazi hyprpaper coreutils findutils 
+    wget neovim starship git fastfetch adwaita-icon-theme apostrophe google-chrome docker nodejs_23 yazi hyprpaper coreutils findutils libreoffice mc
   ];
 
   # Налаштування Git
