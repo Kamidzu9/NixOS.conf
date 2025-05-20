@@ -54,8 +54,7 @@
     # exec-once = waybar & hyprpaper & firefox
     exec-once = hyprpaper &
     exec-once = waybar &
-    exec-once = sleep 1 && nm-applet --indocator & blueman-tray --tray
-
+    exec-once = sleep 1 && nm-applet --indocator & blueman-applet
 
     #############################
     ### ENVIRONMENT VARIABLES ###
