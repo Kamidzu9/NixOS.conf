@@ -38,7 +38,8 @@
     # Set programs that you use
     $terminal = kitty
     $fileManager = kitty yazi
-    $menu = wofi --show drun
+    $menu = rofi -show drun
+    #$menu = wofi --show drun
 
 
     #################
@@ -193,7 +194,7 @@
         sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
 
         touchpad {
-            natural_scroll = false
+            natural_scroll = true
         }
     }
 
@@ -259,6 +260,8 @@
     bind = $mainMod SHIFT, 8, movetoworkspace, 8
     bind = $mainMod SHIFT, 9, movetoworkspace, 9
     bind = $mainMod SHIFT, 0, movetoworkspace, 10
+
+    bind = , mouse:274, exec, 
 
     # Example special workspace (scratchpad)
     bind = $mainMod, S, togglespecialworkspace, magic

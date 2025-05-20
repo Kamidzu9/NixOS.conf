@@ -1,0 +1,77 @@
+/* style.css */
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "FiraCode Nerd Font", monospace;
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  border-bottom: 2px solid #89b4fa;
+}
+
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#custom-launcher,
+#tray,
+#window,
+#workspaces {
+  padding: 0 10px;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  color: #a6adc8;
+  background: transparent;
+}
+
+#workspaces button.active {
+  color: #89b4fa;
+  background: #313244;
+  border-radius: 5px;
+}
+
+#battery.charging {
+  color: #a6e3a1;
+}
+
+#battery.warning {
+  color: #f38ba8;
+}
+
+#pulseaudio.muted {
+  color: #f38ba8;
+}
+
+#pulseaudio#microphone.muted
+
+#tray {
+  padding-right: 10px;
+}
+
+/* Sound-Ausgang normal */
+#pulseaudio {
+  color: #cdd6f4;
+}
+
+/* Sound-Ausgang gemuted */
+#pulseaudio.muted {
+  color: #f38ba8;
+}
+
+/* Mikrofon normal */
+#pulseaudio#microphone {
+  color: #a6e3a1;
+}
+
+/* Mikrofon gemuted */
+#pulseaudio#microphone.muted,
+#pulseaudio#microphone.source-muted {
+  color: #f38ba8;
+}
+

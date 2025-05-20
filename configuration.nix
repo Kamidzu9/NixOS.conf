@@ -110,6 +110,25 @@ in
     '';
   };
 
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [ 
+      ubuntu_font_family
+      liberation_ttf
+      # Persian Font
+      
+      vazir-fonts
+    ];
+  
+    fontconfig = {
+      defaultFonts = {
+        serif = [  "Liberation Serif" "Vazirmatn" ];
+        sansSerif = [ "Ubuntu" "Vazirmatn" ];
+        monospace = [ "Ubuntu Mono" ];
+      };
+    };
+  };
+
   # Enable networking
   networking.networkmanager.enable = true;
   services.dbus.enable = true;
@@ -140,12 +159,19 @@ in
 
   services.libinput.enable = true;
 
-  services.libinput.touchpad = {
-    tapping = true;
-    naturalScrolling = true;
-    clickMethod = "clickfinger"; # як на macOS
-    disableWhileTyping = true;
-    scrollMethod = "twofinger";
+  # Optional: mouse options
+  services.libinput.mouse = {
+    middleEmulation = false; # Disable middle-click paste
+  };
+
+  # Optional: autostart gesture daemon on login
+  systemd.user.services.libinput-gestures = {
+    description = "Libinput Gestures";
+    wantedBy = [ "default.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.libinput-gestures}/bin/libinput-gestures";
+      Restart = "always";
+    };
   };
 
   services.devmon.enable = true;
@@ -154,6 +180,13 @@ in
 
   # Configure console keymap
   console.keyMap = "de";
+
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;  # ← важливо!
+    alsa.enable = true;
+    alsa.support32Bit = true;
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${env.myUser} = {
@@ -172,7 +205,7 @@ in
     wget
     kitty
     zsh
-    wofi
+    rofi-wayland
     curl
     cmake
     openjdk
@@ -183,6 +216,10 @@ in
     xwayland
     waybar
     python314Full
+    nerdfonts
+    brightnessctl
+    libinput-gestures
+    xdotool
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
