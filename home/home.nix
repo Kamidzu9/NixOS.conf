@@ -13,6 +13,7 @@ in
     ../modules/wallpaper.nix
     ../modules/waybar.nix
     ../modules/rofi.nix
+    ../modules/kitty.nix
   ];
 
   nixpkgs.config.allowUnfree = true;

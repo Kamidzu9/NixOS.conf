@@ -54,7 +54,7 @@
     # exec-once = waybar & hyprpaper & firefox
     exec-once = hyprpaper &
     exec-once = waybar &
-    exec-once = sleep 1 && nm-applet --indocator &
+    exec-once = sleep 1 && nm-applet --indocator & blueman-tray --tray
 
 
     #############################
@@ -194,13 +194,20 @@
         sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
 
         touchpad {
-            natural_scroll = true
-        }
+            disable_while_typing = true
+            natural_scroll = false
+            scroll_factor = 1.0
+            middle_button_emulation = false
+            tap_button_map = lmr
+            clickfinger_behavior = false
+            drag_lock = false
+	    tap_button_map = lrm
+	}
     }
-
+ 
     # https://wiki.hyprland.org/Configuring/Variables/#gestures
     gestures {
-        workspace_swipe = false
+        workspace_swipe = true
     }
 
     # Example per-device config
@@ -260,8 +267,6 @@
     bind = $mainMod SHIFT, 8, movetoworkspace, 8
     bind = $mainMod SHIFT, 9, movetoworkspace, 9
     bind = $mainMod SHIFT, 0, movetoworkspace, 10
-
-    bind = , mouse:274, exec, 
 
     # Example special workspace (scratchpad)
     bind = $mainMod, S, togglespecialworkspace, magic

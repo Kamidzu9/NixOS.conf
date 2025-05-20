@@ -133,6 +133,10 @@ in
   networking.networkmanager.enable = true;
   services.dbus.enable = true;
 
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  services.blueman.enable = true;
+
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
