@@ -1,17 +1,17 @@
 { config, pkgs, ... }:
 
 let
-  env = import ./env.nix;
+  env = import ../env.nix;
 in
 {
   # Версія Home Manager, має співпадати з NixOS
   home.stateVersion = "24.11";
 
   imports = [
-    ./hyprland.nix
-    ./hyprpaper.nix
-    ./wallpaper.nix
-    ./waybar.nix
+    ../modules/hyprland.nix
+    ../modules/hyprpaper.nix
+    ../modules/wallpaper.nix
+    ../modules/waybar.nix
   ];
 
   nixpkgs.config.allowUnfree = true;

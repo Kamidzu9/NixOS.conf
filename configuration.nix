@@ -17,7 +17,7 @@ in
       (import "${home-manager}/nixos")
     ];
 
-  home-manager.users.mischa = import ./home.nix;
+  home-manager.users.mischa = import ./home/home.nix;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -182,6 +182,7 @@ in
     wirelesstools
     xwayland
     waybar
+    python314Full
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
