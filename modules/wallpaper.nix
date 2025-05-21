@@ -8,7 +8,7 @@
     [ -e "$LOCKFILE" ] && exit 0
     touch "$LOCKFILE"
      
-    WALLPAPER_DIR="$HOME/Github/aesthetic-wallpapers/images"
+    WALLPAPER_DIR="$HOME/Github/personal/aesthetic-wallpapers/images"
     RANDOM_WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -iname '*.jpg' -o -iname '*.png' -o -iname '*.jpeg' \) | shuf -n 1)
     
     if [ -n "$RANDOM_WALLPAPER" ]; then

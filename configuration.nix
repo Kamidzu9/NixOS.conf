@@ -110,6 +110,14 @@ in
     '';
   };
 
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [ 
@@ -197,7 +205,7 @@ in
     isNormalUser = true;
     shell = pkgs.zsh;
     description = env.myFullName;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
   # Allow unfree packages
@@ -224,6 +232,10 @@ in
     brightnessctl
     libinput-gestures
     xdotool
+    imv
+    grim
+    slurp
+    wl-clipboard
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

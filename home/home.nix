@@ -20,7 +20,7 @@ in
 
   # Пакети, які хочеш мати в $HOME
   home.packages = with pkgs; [
-    wget neovim starship git fastfetch adwaita-icon-theme apostrophe google-chrome docker nodejs_23 yazi hyprpaper coreutils findutils libreoffice mc pamixer
+    wget neovim starship git fastfetch adwaita-icon-theme google-chrome nodejs_23 yazi hyprpaper coreutils findutils libreoffice mc pamixer 
   ];
 
   
@@ -56,7 +56,11 @@ in
         all-outputs = true;
         on-click = "activate";
       };
-      battery = { format = "󰁹 {}%"; };
+      battery = {
+        format = "{icon} {}%";
+        on-click = "notify-send 'Battery Info' \"Remaining time: $(acpi | grep -o '[0-9]*:[0-9]*')\"";
+        format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ]; # або свої, від меншої до більшої
+      };
       cpu = {
         interval = 10;
         format = "󰻠 {}% ";
@@ -117,7 +121,7 @@ in
         scroll-step = 5;
       };
     }];
-    style = builtins.readFile /home/mischa/Github/NixOS.conf/waybar/style.css; # твій CSS
+    style = builtins.readFile /home/mischa/Github/personal/NixOS.conf/waybar/style.css; # твій CSS
   };
 
   # Налаштування Git

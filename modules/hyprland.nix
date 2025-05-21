@@ -227,6 +227,13 @@
     bind = $mainMod, Q, exec, sh $HOME/.config/hypr/scripts/toggle-waybar.sh
     bind = $mainMod, W, exec, sh $HOME/.config/hypr/scripts/random-wallpaper.sh
 
+    # Printscreen — повний екран
+    bind = , Print, exec, grim ~/Pictures/screenshot_$(date +%s).png
+    
+    # або — з виділенням
+    bind = SHIFT, Print, exec, grim -g "$(slurp)" ~/Pictures/screenshot_$(date +%s).png
+
+
     # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
     bind = $mainMod, RETURN, exec, $terminal
     bind = $mainMod, C, killactive,
