@@ -37,7 +37,7 @@
 
     # Set programs that you use
     $terminal = kitty
-    $fileManager = kitty yazi
+    $fileManager = kitty mc
     $menu = rofi -show drun
     #$menu = wofi --show drun
 
