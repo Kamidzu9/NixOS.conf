@@ -3,7 +3,7 @@ programs.kitty = {
   enable = true;
   extraConfig = ''
     font_family FiraCode Nerd Font
-    font_size 12
+    font_size 14
 
     cursor_shape block
     enable_audio_bell no

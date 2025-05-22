@@ -7,6 +7,7 @@ in
   home.stateVersion = "24.11";
 
   imports = [
+    ../modules/starship.nix
     ../modules/mc.nix
     ../modules/hyprland.nix
     ../modules/hyprpaper.nix
@@ -15,16 +16,15 @@ in
     ../modules/rofi.nix
     ../modules/kitty.nix
     ../modules/fastfetch.nix
+    ../modules/mpv.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
     wget
-    neovim 
-    starship 
-    git 
-    fastfetch 
+    neovim  
+    git    
     adwaita-icon-theme 
     google-chrome 
     nodejs_23 
@@ -49,11 +49,6 @@ in
     lfs.enable = true;
   };
  
-  programs.starship = {
-    enable   = true;
-    settings = pkgs.lib.importTOML ./starship.toml;
-  };
-
   gtk = {
     enable = true;
     iconTheme = {
