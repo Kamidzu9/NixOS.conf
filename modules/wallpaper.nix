@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   home.file.".config/hypr/scripts/random-wallpaper.sh".text = ''
     #!/bin/bash

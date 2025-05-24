@@ -39,9 +39,9 @@
         device = "acpi_video0";
       };
       tray = {
-        icon-size = 13;
+        icon-size = 22;
         tooltip = false;
-        spacing = 10;
+        spacing = 8;
       };
       network = {
         format = "󰖩 {essid}";

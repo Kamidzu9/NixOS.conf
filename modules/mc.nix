@@ -1,4 +1,4 @@
-{ pkgs, lib, ...}:
+{ lib, ...}:
 
 let
   homeDir = "/home/mischa";

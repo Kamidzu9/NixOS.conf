@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   env = import ./env.nix;
@@ -12,7 +12,8 @@ let
 in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       (import "${home-manager}/nixos")
     ];
@@ -56,11 +57,11 @@ in
     settings = {
       battery = {
         governor = env.battGov;
-        turbo    = env.battTurbo;
+        turbo = env.battTurbo;
       };
       charger = {
         governor = env.acGov;
-        turbo    = env.acTurbo;
+        turbo = env.acTurbo;
       };
     };
   };
@@ -69,19 +70,19 @@ in
   # TLP Power‑Tuning    #
   #######################
   services.tlp = {
-    enable   = true;
+    enable = true;
     settings = {
       # CPU governor (will align with auto‑cpufreq when both are active)
-      CPU_SCALING_GOVERNOR_ON_AC  = env.acGov;
+      CPU_SCALING_GOVERNOR_ON_AC = env.acGov;
       CPU_SCALING_GOVERNOR_ON_BAT = env.battGov;
 
       # Intel energy‑performance bias (0=power, 2=balance_performance, 5=balance_power, 7=performance)
       CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-      CPU_ENERGY_PERF_POLICY_ON_AC  = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
 
       # Hard caps on performance %
-      CPU_MIN_PERF_ON_AC  = 0;
-      CPU_MAX_PERF_ON_AC  = 100;
+      CPU_MIN_PERF_ON_AC = 0;
+      CPU_MAX_PERF_ON_AC = 100;
       CPU_MIN_PERF_ON_BAT = 0;
       CPU_MAX_PERF_ON_BAT = 20;
 
@@ -89,12 +90,12 @@ in
       USB_AUTOSUSPEND = 1;
 
       # PCIe ASPM (aggressive power saving)
-      PCIE_ASPM_ON_AC  = "powersave";
+      PCIE_ASPM_ON_AC = "powersave";
       PCIE_ASPM_ON_BAT = "powersave";
 
       # Battery charge thresholds (Lenovo‑style)
       START_CHARGE_THRESH_BAT0 = 79;
-      STOP_CHARGE_THRESH_BAT0  = 86;
+      STOP_CHARGE_THRESH_BAT0 = 86;
     };
   };
 
@@ -118,7 +119,7 @@ in
 
   fonts = {
     enableDefaultPackages = true;
-    packages = with pkgs; [ 
+    packages = with pkgs; [
       ubuntu_font_family
       liberation_ttf
       fira-code
@@ -129,10 +130,10 @@ in
       jetbrains-mono
       vazir-fonts
     ];
-  
+
     fontconfig = {
       defaultFonts = {
-        serif = [  "Liberation Serif" "Vazirmatn" ];
+        serif = [ "Liberation Serif" "Vazirmatn" ];
         sansSerif = [ "Ubuntu" "Vazirmatn" ];
         monospace = [ "Ubuntu Mono" ];
       };
@@ -189,7 +190,7 @@ in
   };
 
   services.devmon.enable = true;
-  services.gvfs.enable = true; 
+  services.gvfs.enable = true;
   services.udisks2.enable = true;
 
   # Configure console keymap
@@ -197,7 +198,7 @@ in
 
   services.pipewire = {
     enable = true;
-    pulse.enable = true;  # ← важливо!
+    pulse.enable = true; # ← важливо!
     alsa.enable = true;
     alsa.support32Bit = true;
   };
@@ -240,6 +241,7 @@ in
     imv
     grim
     slurp
+    nixpkgs-fmt
     wl-clipboard
   ];
 

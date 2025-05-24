@@ -1,6 +1,3 @@
-let
-  env = import ../env.nix;
-in
 {
   home.stateVersion = "25.05";
 
