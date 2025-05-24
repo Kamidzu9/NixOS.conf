@@ -2,7 +2,7 @@
 programs.kitty = {
   enable = true;
   extraConfig = ''
-    font_family FiraCode Nerd Font
+    font_family FiraCode
     font_size 14
 
     cursor_shape block

@@ -4,13 +4,12 @@ let
   env = import ../env.nix;
 in
 {
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
 
   imports = [
     ../modules/starship.nix
     ../modules/mc.nix
     ../modules/hyprland.nix
-    ../modules/hyprpaper.nix
     ../modules/wallpaper.nix
     ../modules/waybar.nix
     ../modules/rofi.nix
@@ -27,8 +26,7 @@ in
     git    
     adwaita-icon-theme 
     google-chrome 
-    nodejs_23 
-    hyprpaper 
+    nodejs_24
     coreutils 
     findutils 
     libreoffice 

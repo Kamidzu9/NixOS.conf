@@ -17,7 +17,7 @@
 
       logo = {
         preserveAspectRatio = true;
-        source = "~/Github/personal/NixOS.conf/assets/nix-cat.png";
+        source = "~/github/personal/NixOS.conf/assets/nix-cat.png";
         type = "kitty";
         height = 9;
         padding.left = 1;

@@ -52,7 +52,7 @@
     # exec-once = $terminal
     # exec-once = nm-applet &
     # exec-once = waybar & hyprpaper & firefox
-    exec-once = hyprpaper &
+    exec = swww-daemon
     exec-once = waybar &
     exec-once = sleep 1 && nm-applet --indocator & blueman-applet
 
