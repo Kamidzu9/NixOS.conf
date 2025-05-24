@@ -74,8 +74,8 @@
 
     # https://wiki.hyprland.org/Configuring/Variables/#general
     general {
-        gaps_in = 5
-        gaps_out = 20
+        gaps_in = 2
+        gaps_out = 8
 
         border_size = 2
 

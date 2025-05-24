@@ -2,8 +2,9 @@
 programs.kitty = {
   enable = true;
   extraConfig = ''
-    font_family FiraCode
+    font_family FiraCode Nerd Font
     font_size 14
+    enable_ligatures yes
 
     cursor_shape block
     enable_audio_bell no
@@ -12,7 +13,10 @@ programs.kitty = {
 
     map ctrl+shift+n new_os_window
 
-    # vim:ft=kitty
+cursor_trail 3
+cursor_trail_decay 0.1 0.4
+
+# vim:ft=kitty
 
 ## name:     Catppuccin Kitty Mocha
 ## author:   Catppuccin Org

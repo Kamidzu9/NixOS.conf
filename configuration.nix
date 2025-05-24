@@ -122,6 +122,10 @@ in
       ubuntu_font_family
       liberation_ttf
       fira-code
+      fira-mono
+      fira-sans
+      nerd-fonts.fira-code
+      nerd-fonts.fira-mono
       jetbrains-mono
       vazir-fonts
     ];
@@ -224,7 +228,7 @@ in
     swww
     networkmanagerapplet
     networkmanager
-    iw                    # для сканування Wi-Fi
+    iw
     wirelesstools
     xwayland
     waybar

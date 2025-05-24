@@ -8,13 +8,12 @@
       exclusive = true;
       passtrough = false;
       gtk-layer-shell = true;
-      height = 0;
+      height = 4;
       modules-left = [
         "hyprland/workspaces"
-        "cpu"
-        "memory"
+	"hyprland/window"
       ];
-      modules-center = [ "hyprland/window" ];
+      modules-center = [ "clock" ];
       modules-right = [
         "tray"
         "network"
@@ -22,7 +21,6 @@
         "pulseaudio"
 	"pulseaudio#microphone"
         "battery"
-        "clock"
       ];
       "hyprland/window" = { format = "{}"; };
       "wlr/workspaces" = {
@@ -35,18 +33,6 @@
         format = "{icon} {}%";
         on-click = "notify-send 'Battery Info' \"Remaining time: $(acpi | grep -o '[0-9]*:[0-9]*')\"";
         format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ]; 
-      };
-      cpu = {
-        interval = 10;
-        format = "󰻠 {}% ";
-        max-length = 10;
-        on-click = "";
-      };
-      memory = {
-        interval = 30;
-        format = "  {}% ";
-        format-alt = "  {used:0.1f}G ";
-        max-length = 10;
       };
       backlight = {
         format = "󰖨 {}";

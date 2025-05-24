@@ -9,8 +9,8 @@
     touch "$LOCKFILE"
 
     # Define the directories
-    AESTHETIC_DIR="$HOME/github/personal/aesthetic-wallpapers/images"
-    WALLS_DIR="$HOME/github/personal/walls"
+    AESTHETIC_DIR="$HOME/Pictures/Wallpapers/aesthetic-wallpapers/images"
+    WALLS_DIR="$HOME/Pictures/Wallpapers/walls"
 
     # Get all images and gifs from both directories
     IMAGE_FILES=$(find "$AESTHETIC_DIR" -type f \( -iname '*.jpg' -o -iname '*.png' -o -iname '*.jpeg' \))
@@ -28,7 +28,7 @@
 
     if [ -n "$RANDOM_WALLPAPER" ]; then
       # Use swww to change the wallpaper with a smooth transition
-      swww img "$RANDOM_WALLPAPER" --transition-type random --transition-fps 60
+      swww img "$RANDOM_WALLPAPER" --transition-type random --transition-fps 30
     else
       echo "❌ No wallpapers found in $AESTHETIC_DIR or $WALLS_DIR"
     fi

@@ -1,77 +1,148 @@
-/* style.css */
+/* Global styling for Waybar */
 * {
   border: none;
   border-radius: 0;
   font-family: "FiraCode", monospace;
-  font-size: 14px;
+  font-size: 16px;
   min-height: 0;
+  transition: all 0.3s ease-in-out; /* Smooth transitions for all elements */
 }
 
 window#waybar {
-  background: #1e1e2e;
-  color: #cdd6f4;
-  border-bottom: 2px solid #89b4fa;
+  margin-top: 8px;
+  background: transparent;
+  color: #cdd6f4; /* Light Mocha color */
 }
 
-#clock,
-#battery,
-#network,
-#pulseaudio,
-#custom-launcher,
-#tray,
-#window,
-#workspaces {
+#clock, #battery, #network, #pulseaudio, #custom-launcher, #tray, #window, #backlight {
   padding: 0 10px;
+  margin: 0 4px;
+  transition: background-color 0.3s ease; /* Smooth background change */
+}
+
+/* Main container and borders */
+#tray, 
+#pulseaudio,
+#battery,
+#clock,
+#network,
+#custom-manager,
+#backlight {
+  background: linear-gradient(145deg, #1e1e2e, #262626); /* Subtle gradient background */
+  border: 2px solid #89b4fa; /* Mocha blue accents */
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+#workspaces {
+  background: linear-gradient(145deg, #1e1e2e, #262626);
+  border: 2px solid #89b4fa;
+  border-radius: 16px;
+  margin-left: 8px;
+  padding: 2px; /* Padding for better button spacing */
 }
 
 #workspaces button {
-  padding: 0 5px;
+  border: 1px solid transparent; /* No border by default */
+  border-radius: 4px; /* Subtle radius for middle buttons */
+  padding: 0 10px;
   color: #a6adc8;
   background: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease; /* Smooth transitions */
 }
 
+#workspaces button:hover {
+  animation: blink 2s ease infinite; /* Blinking effect */
+  border-radius: 16px; /* Slightly more radius on hover */
+  /* Remove the border on hover to eliminate the line */
+  border: none; 
+}
+
+@keyframes blink {
+  0% {
+    background-color: rgba(137, 180, 250, 0.2);
+  }
+  50% {
+    background-color: rgba(137, 180, 250, 0.4); /* Slightly more visible on half blink */
+  }
+  100% {
+    background-color: rgba(137, 180, 250, 0.2);
+  }
+}
+
+/* First workspace button (rounded left side) */
+#workspaces button:nth-child(1) {
+  border-radius: 12px 2px 2px 12px; /* First button has a more pronounced left radius */
+}
+
+/* Last workspace button (rounded right side) */
+#workspaces button:nth-last-child(1) {
+  border-radius: 4px 12px 12px 4px; /* Last button has a more pronounced right radius */
+}
+
+/* Active workspace with dynamic radius */
 #workspaces button.active {
-  color: #89b4fa;
-  background: #313244;
-  border-radius: 5px;
+  color: #89b4fa; /* Mocha Blue active */
+  background: #313244; /* Active workspace background */
+  border-radius: 4px; /* Subtle radius for active state */
+  animation: none; /* Disable blink animation for active button */
+  border: 1px solid #89b4fa; /* Add border on active state */
+}
+
+/* Adjust radius for first and last active buttons */
+#workspaces button:nth-child(1).active {
+  border-radius: 12px 4px 4px 12px; /* First workspace with larger left radius */
+}
+
+#workspaces button:nth-last-child(1).active {
+  border-radius: 4px 12px 12px 4px; /* Last workspace with larger right radius */
+}
+
+/* Additional styles for other elements */
+#pulseaudio, #microphone {
+  color: #cdd6f4; /* Light Mocha for volume */
+}
+
+/* Muted states */
+#pulseaudio.muted, #microphone.muted {
+  color: #f38ba8; /* Mocha pink for muted volume or mic */
+}
+
+/* Microphone styling */
+#microphone {
+  color: #a6e3a1; /* Light green for active microphone */
+}
+
+#microphone.muted {
+  color: #f38ba8; /* Pink for muted microphone */
+}
+
+/* Battery */
+#battery {
+  margin-right: 8px;
 }
 
 #battery.charging {
-  color: #a6e3a1;
+  color: #a6e3a1; /* Light green for charging */
 }
 
 #battery.warning {
-  color: #f38ba8;
+  color: #f38ba8; /* Mocha pink for low battery */
 }
 
-#pulseaudio.muted {
-  color: #f38ba8;
+/* Hover Effects for other elements */
+#tray:hover, #pulseaudio:hover, #battery:hover, #clock:hover, #network:hover, #backlight:hover {
+  background-color: rgba(141, 180, 250, 0.1); /* Light Mocha blue background */
+  box-shadow: 0 0 15px rgba(141, 180, 250, 0.3); /* Soft glow effect */
 }
-
-#pulseaudio#microphone.muted
 
 #tray {
   padding-right: 10px;
 }
 
-/* Sound-Ausgang normal */
-#pulseaudio {
-  color: #cdd6f4;
-}
-
-/* Sound-Ausgang gemuted */
-#pulseaudio.muted {
-  color: #f38ba8;
-}
-
-/* Mikrofon normal */
-#pulseaudio#microphone {
-  color: #a6e3a1;
-}
-
-/* Mikrofon gemuted */
-#pulseaudio#microphone.muted,
-#pulseaudio#microphone.source-muted {
-  color: #f38ba8;
+/* Adding a gradient border effect on hover */
+#tray:hover, #pulseaudio:hover, #battery:hover, #clock:hover, #network:hover, #backlight:hover {
+  border: 2px solid #f38ba8; /* Highlighted border color on hover */
+  box-shadow: 0 0 20px rgba(243, 139, 168, 0.3); /* Soft glow on hover */
 }
 

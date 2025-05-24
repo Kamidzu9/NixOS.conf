@@ -1,0 +1,100 @@
+/* style.css */
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "FiraCode", monospace;
+  font-size: 16px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+  color: #cdd6f4;
+}
+
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#custom-launcher,
+#tray,
+#window,
+#backlight {
+  padding: 0 10px;
+  margin: 0 4px;
+}
+
+#tray, 
+#pulseaudio,
+#battery,
+#clock,
+#network,
+#custom-manager,
+#backlight {
+  background: #1e1e2e;
+  border: 2px solid #89b4fa;
+  border-radius: 16px;
+}
+
+#workspaces {
+  background: #1e1e2e;
+  border: 2px solid #89b4fa;
+  border-radius: 16px;
+  margin-left: 8px;
+}
+
+#workspaces button {
+  border: 1px solid transparent;
+  border-radius: 32px;
+  padding: 0 5px;
+  color: #a6adc8;
+  background: transparent;
+}
+
+#workspaces button.active {
+  color: #89b4fa;
+  background: #313244;
+  border-radius: 5px;
+}
+
+#battery {
+  margin-right: 8px;
+}
+
+#battery.charging {
+  color: #a6e3a1;
+}
+
+#battery.warning {
+  color: #f38ba8;
+}
+
+#pulseaudio.muted {
+  color: #f38ba8;
+}
+
+#tray {
+  padding-right: 10px;
+}
+
+/* Sound-Ausgang normal */
+#pulseaudio {
+  color: #cdd6f4;
+}
+
+/* Sound-Ausgang gemuted */
+#pulseaudio.muted {
+  color: #f38ba8;
+}
+
+/* Mikrofon normal */
+#pulseaudio#microphone {
+  color: #a6e3a1;
+}
+
+/* Mikrofon gemuted */
+#pulseaudio#microphone.muted,
+#pulseaudio#microphone.source-muted {
+  color: #f38ba8;
+}
+
