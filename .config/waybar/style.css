@@ -3,7 +3,7 @@
   border: none;
   border-radius: 0;
   font-family: "FiraCode", monospace;
-  font-size: 16px;
+  font-size: 18px;
   min-height: 0;
   transition: all 0.3s ease-in-out; /* Smooth transitions for all elements */
 }
@@ -37,18 +37,21 @@ window#waybar {
 #workspaces {
   background: linear-gradient(145deg, #1e1e2e, #262626);
   border: 2px solid #89b4fa;
-  border-radius: 16px;
+  border-radius: 4px;
   margin-left: 8px;
   padding: 2px; /* Padding for better button spacing */
 }
 
 #workspaces button {
   border: 1px solid transparent; /* No border by default */
-  border-radius: 4px; /* Subtle radius for middle buttons */
-  padding: 0 10px;
+  border-radius: 16px; /* Subtle radius for middle buttons */
+  padding: 10px;
   color: #a6adc8;
   background: transparent;
   transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease; /* Smooth transitions */
+  box-shadow: none;
+  text-shadow: none;
+  margin: 0 2px;
 }
 
 #workspaces button:hover {
@@ -73,11 +76,13 @@ window#waybar {
 /* First workspace button (rounded left side) */
 #workspaces button:nth-child(1) {
   border-radius: 12px 2px 2px 12px; /* First button has a more pronounced left radius */
+  margin-left: 0;
 }
 
 /* Last workspace button (rounded right side) */
 #workspaces button:nth-last-child(1) {
   border-radius: 4px 12px 12px 4px; /* Last button has a more pronounced right radius */
+  margin-right: 0;
 }
 
 /* Active workspace with dynamic radius */
