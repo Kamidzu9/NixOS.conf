@@ -11,7 +11,7 @@ programs.kitty = {
 
     background_opacity 0.78
 
-    map ctrl+shift+n new_os_window
+    # map ctrl+shift+n new_os_window
 
 cursor_trail 3
 cursor_trail_decay 0.1 0.4
