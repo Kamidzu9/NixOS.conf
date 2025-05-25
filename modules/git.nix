@@ -5,8 +5,8 @@ let
 in
 {
   programs.git = {
-    enable    = true;
-    userName  = "${env.myFullName}";
+    enable = true;
+    userName = "${env.myFullName}";
     userEmail = "${env.myEmail}";
     aliases = {
       co = "checkout";
@@ -14,5 +14,8 @@ in
       st = "status";
     };
     lfs.enable = true;
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
   };
 }

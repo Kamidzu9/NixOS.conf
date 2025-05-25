@@ -30,7 +30,7 @@ window#waybar {
   background-color: @surface0;
   border-radius: 10px;
   padding: 2px 4px;
-  margin: 0 8px;
+  margin: 0 0 0 8px;
 }
 
 #workspaces button {
@@ -62,7 +62,7 @@ window#waybar {
 #window {
   background-color: @surface0;
   padding: 6px 12px;
-  margin: 0 4px;
+  margin: 0 2px;
   border-radius: 16px;
   color: @text;
 }
@@ -94,12 +94,7 @@ window#waybar {
 
 #battery.critical {
   color: @red;
-}
-
-#custom-launcher {
-  min-width: 50px;
-}
-
+} 
 #pulseaudio.muted {
   color: @red;
 }
