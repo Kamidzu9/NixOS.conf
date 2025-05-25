@@ -1,167 +1,123 @@
-/* Global styling for Waybar */
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;
+@define-color text #cdd6f4;
+@define-color text-hover #313244;
+@define-color subtext0 #a6adc8;
+@define-color surface0 #313244;
+@define-color blue #89b4fa;
+@define-color green #a6e3a1;
+@define-color red #f38ba8;
+@define-color yellow #f9e2af;
+@define-color pink #f5c2e7;
+@define-color sky #89dceb;
+@define-color peach #fab387;
+
 * {
   border: none;
   border-radius: 0;
-  font-family: "FiraCode", monospace;
-  font-size: 16px;
+  font-family: "FiraCode Nerd Font", monospace;
+  font-size: 14px;
   min-height: 0;
-  transition: all 0.3s ease-in-out; /* Smooth transitions for all elements */
+  transition: background-color 0.3s, color 0.3s, border-radius 0.3s; 
 }
 
 window#waybar {
-  margin-top: 8px;
   background: transparent;
-  color: #cdd6f4; /* Light Mocha color */
-}
-
-#clock, #battery, #network, #pulseaudio, #custom-launcher, #tray, #window, #backlight {
-  padding: 0 10px;
-  margin: 0 4px;
-  transition: background-color 0.3s ease; /* Smooth background change */
-}
-
-/* Main container and borders */
-#tray, 
-#pulseaudio,
-#battery,
-#clock,
-#network,
-#custom-manager,
-#backlight {
-  background: linear-gradient(145deg, #1e1e2e, #262626); 
-  border: 2px solid #89b4fa; /* Mocha blue accents */
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
 #workspaces {
-  background: linear-gradient(145deg, #1e1e2e, #262626);
-  border: 2px solid #89b4fa;
-  border-radius: 16px;
-  margin-left: 8px;
-  padding: 2px; /* Padding for better button spacing */
+  background-color: @surface0;
+  border-radius: 10px;
+  padding: 2px 4px;
+  margin: 0 8px;
 }
 
 #workspaces button {
-  border: 1px solid transparent; 
-  border-radius: 8px;  
-  padding: 0 10px;
-  color: #a6adc8;
-  background: transparent;
-  transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.5s ease;
-  box-shadow: none;
-  text-shadow: none;
-  margin: 0 2px;
+  padding: 4px 8px;
+  margin: 2px;
+  border-radius: 16px;
+  background-color: transparent;
+  color: @subtext0;
 }
 
 #workspaces button:hover {
-  animation: blink 2s ease infinite; /* Blinking effect */
-  border-radius: 16px;
-  border: none; 
+  background-color: rgba(137, 180, 250, 0.2); /* @blue with alpha */
+  color: @text-hover;
 }
 
-@keyframes blink {
-  0% {
-    background-color: rgba(137, 180, 250, 0.2);
-  }
-  50% {
-    background-color: rgba(137, 180, 250, 0.4); /* Slightly more visible on half blink */
-  }
-  100% {
-    background-color: rgba(137, 180, 250, 0.2);
-  }
-}
-
-/* First workspace button (rounded left side) */
-#workspaces button:nth-child(1) {
-  border-radius: 12px 2px 2px 12px;
-  margin-left: 0;
-}
-
-/* Last workspace button (rounded right side) */
-#workspaces button:nth-last-child(1) {
-  border-radius: 4px 12px 12px 4px;  
-  margin-right: 0;
-}
-
-/* Active workspace with dynamic radius */
 #workspaces button.active {
-  color: #89b4fa; /* Mocha Blue active */
-  background: #313244; /* Active workspace background */
-  border-radius: 4px; /* Subtle radius for active state */
-  animation: none; /* Disable blink animation for active button */
-  border: 1px solid #89b4fa; /* Add border on active state */
+  background-color: @blue;
+  color: @crust;
+  border-radius: 8px;
 }
 
-#workspaces button:first-child:last-child.active {
-  border-radius:16px;
-  transition: 0;
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#backlight,
+#tray,
+#custom-launcher,
+#window {
+  background-color: @surface0;
+  padding: 6px 12px;
+  margin: 0 4px;
+  border-radius: 16px;
+  color: @text;
 }
 
-#workspaces button:nth-child(1):hover {
-  border-radius: 12px;
-  transition: 0;
+#clock:hover,
+#battery:hover,
+#network:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#tray:hover,
+#custom-launcher:hover,
+#window:hover {
+  border-radius: 8px;
+  background-color: rgba(137, 180, 250, 0.76); /* @blue with alpha */
+  color: @text-hover;
 }
 
-/* Adjust radius for first and last active buttons */
-#workspaces button:nth-child(1).active {
-  border-radius: 12px 4px 4px 12px; /* First workspace with larger left radius */
-}
-
-#workspaces button:nth-last-child(1):hover {
-  border-radius: 12px;
-  transition: 0;
-}
-
-#workspaces button:nth-last-child(1).active {
-  border-radius: 4px 12px 12px 4px; /* Last workspace with larger right radius */
-}
-
-/* Additional styles for other elements */
-#pulseaudio, #microphone {
-  color: #cdd6f4; /* Light Mocha for volume */
-}
-
-/* Muted states */
-#pulseaudio.muted, #microphone.muted {
-  color: #f38ba8; /* Mocha pink for muted volume or mic */
-}
-
-/* Microphone styling */
-#microphone {
-  color: #a6e3a1; /* Light green for active microphone */
-}
-
-#microphone.muted {
-  color: #f38ba8; /* Pink for muted microphone */
-}
-
-/* Battery */
 #battery {
   margin-right: 8px;
 }
 
 #battery.charging {
-  color: #a6e3a1; /* Light green for charging */
+  color: @green;
 }
 
 #battery.warning {
-  color: #f38ba8; /* Mocha pink for low battery */
+  color: @yellow;
 }
 
-/* Hover Effects for other elements */
-#tray:hover, #pulseaudio:hover, #battery:hover, #clock:hover, #network:hover, #backlight:hover {
-  background-color: rgba(141, 180, 250, 0.1); /* Light Mocha blue background */
-  box-shadow: 0 0 15px rgba(141, 180, 250, 0.3); /* Soft glow effect */
+#battery.critical {
+  color: @red;
 }
 
-#tray {
-  padding-right: 10px;
+#custom-launcher {
+  min-width: 50px;
 }
 
-/* Adding a gradient border effect on hover */
-#tray:hover, #pulseaudio:hover, #battery:hover, #clock:hover, #network:hover, #backlight:hover {
-  border: 2px solid #f38ba8; /* Highlighted border color on hover */
-  box-shadow: 0 0 20px rgba(243, 139, 168, 0.3); /* Soft glow on hover */
+#pulseaudio.muted {
+  color: @red;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @red;
+}
+
+tooltip {
+  background-color: @mantle;
+  color: @text;
+  border-radius: 8px;
+  padding: 6px;
+  border: 1px solid @blue;
 }
 
