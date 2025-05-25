@@ -3,7 +3,7 @@
     enable = true;
     extraConfig = ''
           font_family FiraCode Nerd Font
-          font_size 14
+          font_size 16
           enable_ligatures yes
 
           cursor_shape block

@@ -20,5 +20,10 @@
     ../modules/waybar.nix
     ../modules/zshrc.nix
   ];
+
+  home.sessionVariables = {
+    GTK_THEME = "Adwaita-dark";
+    QT_STYLE_OVERRIDE = "adwaita-dark";
+  };
 }
 

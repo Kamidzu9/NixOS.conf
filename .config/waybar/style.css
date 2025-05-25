@@ -1,7 +1,8 @@
 @define-color base #1e1e2e;
 @define-color mantle #181825;
 @define-color crust #11111b;
-@define-color text #cdd6f4;
+@define-color text #DFDFDF;
+/*@define-color text #cdd6f4;*/
 @define-color text-hover #313244;
 @define-color subtext0 #a6adc8;
 @define-color surface0 #313244;
@@ -17,9 +18,9 @@
   border: none;
   border-radius: 0;
   font-family: "FiraCode Nerd Font", monospace;
-  font-size: 14px;
+  font-size: 18px;
   min-height: 0;
-  transition: background-color 0.3s, border-radius 0.3s; 
+  transition: background-color 0.3s, border-radius 0.3s;
 }
 
 window#waybar {
@@ -30,26 +31,32 @@ window#waybar {
   background-color: @surface0;
   border-radius: 10px;
   padding: 2px 4px;
-  margin: 0 0 0 8px;
+  margin-left: 8px;
 }
 
 #workspaces button {
   padding: 4px 8px;
   margin: 2px;
-  border-radius: 16px;
-  background-color: transparent;
+  border-radius: 32px;
   color: @subtext0;
 }
 
 #workspaces button:hover {
-  background-color: rgba(137, 180, 250, 0.2); /* @blue with alpha */
-  color: @text-hover;
+  background: rgba(137, 180, 250, 0.2);
 }
 
 #workspaces button.active {
   background-color: @blue;
   color: @crust;
   border-radius: 8px;
+}
+
+#workspaces button:first-child {
+  margin-left: 0;
+}
+
+#workspaces button:last-child {
+  margin-right: 0;
 }
 
 #clock,
@@ -63,7 +70,7 @@ window#waybar {
   background-color: @surface0;
   padding: 6px 12px;
   margin: 0 2px;
-  border-radius: 16px;
+  border-radius: 24px;
   color: @text;
 }
 
@@ -75,9 +82,9 @@ window#waybar {
 #tray:hover,
 #custom-launcher:hover,
 #window:hover {
-  border-radius: 8px;
   background-color: rgba(137, 180, 250, 0.76); /* @blue with alpha */
   color: @text-hover;
+  border-radius: 8px;
 }
 
 #battery {
@@ -94,7 +101,8 @@ window#waybar {
 
 #battery.critical {
   color: @red;
-} 
+}
+
 #pulseaudio.muted {
   color: @red;
 }

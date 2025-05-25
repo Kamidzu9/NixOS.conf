@@ -1,11 +1,15 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 
 {
   gtk = {
     enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
     iconTheme = {
-      package = pkgs.adwaita-qt;  
-      name    = "Adwaita";   
-      };
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
   };
 }
