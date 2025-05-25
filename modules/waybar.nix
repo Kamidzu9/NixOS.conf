@@ -18,7 +18,6 @@
       modules-center = [ "clock" ];
       modules-right = [
         "tray"
-        "network"
         "backlight"
         "pulseaudio"
         "pulseaudio#microphone"
@@ -44,10 +43,6 @@
         icon-size = 22;
         tooltip = false;
         spacing = 8;
-      };
-      network = {
-        format = "󰖩 {essid}";
-        format-disconnected = "󰖪 disconnected";
       };
       clock = {
         format = " {:%I:%M %p   %m/%d}";

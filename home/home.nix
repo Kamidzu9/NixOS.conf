@@ -19,11 +19,7 @@
     ../modules/wallpaper.nix
     ../modules/waybar.nix
     ../modules/zshrc.nix
+    ../modules/btop.nix
   ];
-
-  home.sessionVariables = {
-    GTK_THEME = "Adwaita-dark";
-    QT_STYLE_OVERRIDE = "adwaita-dark";
-  };
 }
 
