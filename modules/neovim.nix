@@ -16,6 +16,7 @@
       lualine-nvim
       vim-commentary
       vim-markdown
+      catppuccin-nvim
     ];
 
     extraPackages = with pkgs; [
@@ -37,16 +38,27 @@
       filetype plugin indent on
 
       lua << EOF
+        local api = vim.api
+        local fn  = vim.fn
+
+        require("catppuccin").setup({ flavour = "mocha" })
+        vim.cmd("colorscheme catppuccin")
+
+        -- Statusline & Treesitter
         require("lualine").setup()
         require("nvim-treesitter.configs").setup {
           highlight = { enable = true },
         }
+
+        -- Telescope
         require("telescope").setup {}
+
+        -- LSP Servers
         require("lspconfig").pyright.setup {}
         require("lspconfig").lua_ls.setup {}
         require("lspconfig").nixd.setup {}
 
-        -- cmp
+        -- Completion
         local cmp = require("cmp")
         cmp.setup {
           snippet = {
@@ -60,11 +72,37 @@
           },
         }
 
-        -- Auto-format .nix files on save
-        vim.api.nvim_create_autocmd("BufWritePre", {
+        -- Helper: run formatter on the whole buffer and restore cursor/view
+        local function fmt(cmd)
+          local view = fn.winsaveview()
+          api.nvim_command('%!' .. cmd)
+          fn.winrestview(view)
+        end
+
+        -- Auto-format on save group
+        local aug = api.nvim_create_augroup("AutoFormat", { clear = true })
+
+        -- Nix
+        api.nvim_create_autocmd("BufWritePre", {
+          group   = aug,
           pattern = "*.nix",
+          callback = function() fmt("nixpkgs-fmt") end,
+        })
+
+        -- Python
+        api.nvim_create_autocmd("BufWritePre", {
+          group   = aug,
+          pattern = "*.py",
+          callback = function() fmt("black --quiet -") end,
+        })
+
+        -- JavaScript / TypeScript / Vue
+        api.nvim_create_autocmd("BufWritePre", {
+          group   = aug,
+          pattern = { "*.js", "*.jsx", "*.ts", "*.tsx", "*.vue" },
           callback = function()
-            vim.cmd("silent! !nixpkgs-fmt %")
+            local fname = fn.expand("%:p")
+            fmt("prettierd --stdin-filepath " .. fname)
           end,
         })
       EOF

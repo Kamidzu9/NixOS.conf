@@ -1,5 +1,5 @@
 {
-home.file.".zshrc".text = ''
+  home.file.".zshrc".text = ''
     export HISTFILE="$HOME/.zsh_history"
     HISTSIZE=10000
     SAVEHIST=10000
