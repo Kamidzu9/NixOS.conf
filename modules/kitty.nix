@@ -9,8 +9,8 @@
           cursor_shape block
           enable_audio_bell no
 
-          background_opacity 0.78
-
+          background_opacity 0.85
+          background_blur 1
           # map ctrl+shift+n new_os_window
 
       cursor_trail 3

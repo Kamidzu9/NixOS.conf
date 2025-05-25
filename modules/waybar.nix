@@ -18,12 +18,26 @@
       modules-center = [ "clock" ];
       modules-right = [
         "tray"
+        "hyprland/language"
         "backlight"
         "pulseaudio"
         "pulseaudio#microphone"
         "battery"
       ];
-      "hyprland/window" = { format = "{}"; };
+      "hyprland/language" = {
+        "format" = "{}";
+        "format-de" = "de";
+        "format-uk" = "ua";
+        "keyboard-name" = "at-translated-set-2-keyboard";
+      };
+      "hyprland/window" = {
+        "format" = "{}";
+        "rewrite" = {
+          "(.*) - Google Chrome" = "  $1";
+          "(.*)zsh" = " zsh";
+        };
+        "separate-outputs" = true;
+      };
       "wlr/workspaces" = {
         on-scroll-up = "hyprctl dispatch workspace e+1";
         on-scroll-down = "hyprctl dispatch workspace e-1";

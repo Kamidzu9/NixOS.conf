@@ -29,6 +29,10 @@ window#waybar {
   background: transparent;
 }
 
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
 #workspaces {
   background-color: @surface0;
   border-radius: 10px;
@@ -67,7 +71,8 @@ window#waybar {
 #backlight,
 #tray,
 #custom-launcher,
-#window {
+#window,
+#language {
   background-color: @surface0;
   padding: 6px 12px;
   margin: 0 2px;
@@ -81,7 +86,8 @@ window#waybar {
 #backlight:hover,
 #tray:hover,
 #custom-launcher:hover,
-#window:hover {
+#window:hover,
+#language:hover {
   background-color: rgba(137, 180, 250, 0.76); /* @blue with alpha */
   color: @text-hover;
   border-radius: 8px;

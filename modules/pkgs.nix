@@ -20,5 +20,6 @@
     prettierd
     black
     nodePackages.markdownlint-cli
+    obs-studio
   ];
 }

@@ -32,10 +32,17 @@ in
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
+  # Keep only the last 5 generations
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = false;
+    flake = null;
+  };
+
   nix.gc = {
     automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 3d";
+    dates = "weekly";
+    options = "--delete-older-than 7d";
   };
 
   programs.hyprland.enable = true;
