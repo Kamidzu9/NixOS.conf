@@ -19,7 +19,7 @@
   font-family: "FiraCode Nerd Font", monospace;
   font-size: 14px;
   min-height: 0;
-  transition: background-color 0.3s, color 0.3s, border-radius 0.3s; 
+  transition: background-color 0.3s, border-radius 0.3s; 
 }
 
 window#waybar {
