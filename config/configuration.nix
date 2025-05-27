@@ -43,10 +43,6 @@ in
   networking.networkmanager.enable = true;
   services.dbus.enable = true;
 
-  # Sudo hart
-  security.sudo.enable = true;
-  security.sudo.wheelNeedsPassword = true;
-
   services.devmon.enable = true;
   services.gvfs.enable = true;
   services.udisks2.enable = true;

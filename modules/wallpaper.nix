@@ -15,7 +15,7 @@
     RANDOM_WALLPAPER=$(echo "$ALL_FILES" | shuf -n 1)
 
     if [ -n "$RANDOM_WALLPAPER" ]; then
-      swww img "$RANDOM_WALLPAPER" --transition-type random --transition-fps 30
+      swww img "$RANDOM_WALLPAPER" --transition-type grow --transition-fps 30 --transition-duration 2 --transition-pos 0.5,0.5
     else
       echo "❌ No wallpapers found in $WALLPAPER_DIR"
     fi

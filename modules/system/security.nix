@@ -27,4 +27,8 @@
   security.auditd.enable = true;
 
   boot.blacklistedKernelModules = [ "usb_storage" ];
+
+  # Sudo hart
+  security.sudo.enable = true;
+  security.sudo.wheelNeedsPassword = true;
 }
