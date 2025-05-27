@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    chkrootkit
     wget
     kitty
     zsh

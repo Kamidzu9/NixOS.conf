@@ -18,6 +18,9 @@ in
     ../modules/system/users.nix
     ../modules/system/packages.nix
     ../modules/system/fonts.nix
+    ../modules/system/localization.nix
+    ../modules/system/chkrootkit.nix
+    ../modules/system/fileSystems.nix
 
     ../modules/desktop/hyprland.nix
     ../modules/desktop/zsh.nix
@@ -34,8 +37,6 @@ in
 
   system.stateVersion = "25.05";
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = env.myHostname;
