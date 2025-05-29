@@ -9,6 +9,7 @@ in
 {
   imports = [
     ./hardware-configuration.nix
+    ../modules/system/fileSystems.nix
     ../modules/system/firewall.nix
     ../modules/system/ssh.nix
     ../modules/system/security.nix
@@ -20,7 +21,7 @@ in
     ../modules/system/fonts.nix
     ../modules/system/localization.nix
     ../modules/system/chkrootkit.nix
-    ../modules/system/fileSystems.nix
+    ../modules/system/bluetooth.nix
 
     ../modules/desktop/hyprland.nix
     ../modules/desktop/zsh.nix

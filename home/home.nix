@@ -4,6 +4,7 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
+    ../modules/pkgs.nix
     ../modules/fastfetch.nix
     ../modules/git.nix
     ../modules/gtk.nix
@@ -12,7 +13,6 @@
     ../modules/mc.nix
     ../modules/mpv.nix
     ../modules/neovim.nix
-    ../modules/pkgs.nix
     ../modules/qt.nix
     ../modules/rofi.nix
     ../modules/starship.nix
