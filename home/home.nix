@@ -12,7 +12,7 @@
     ../modules/kitty.nix
     ../modules/mc.nix
     ../modules/mpv.nix
-    ../modules/neovim.nix
+    ./modules/neovim/default.nix
     ../modules/qt.nix
     ../modules/rofi.nix
     ../modules/starship.nix
@@ -22,4 +22,3 @@
     ../modules/btop.nix
   ];
 }
-
