@@ -23,5 +23,10 @@
       ];
       command = "setlocal spell spelllang=en";
     }
+
+    {
+      event = "TextYankPost";
+      command = "silent! TSBufDisable highlight";
+    }
   ];
 }

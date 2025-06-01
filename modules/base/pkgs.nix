@@ -21,5 +21,6 @@
     black
     nodePackages.markdownlint-cli
     obs-studio
+    tree-sitter
   ];
 }
