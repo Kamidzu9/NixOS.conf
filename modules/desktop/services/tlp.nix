@@ -1,5 +1,5 @@
 let
-  env = import ../env.nix;
+  env = import ../../../config/env.nix;
 in
 {
   services.tlp = {

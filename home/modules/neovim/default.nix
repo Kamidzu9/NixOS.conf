@@ -8,10 +8,10 @@ let
 in
 {
   imports = [
-    # модуль nixvim для Home-Manager
+    # Module Home-Mager
     nixvim.homeModules.nixvim
 
-    # твої дрібні файли
+    # import
     ./autocommands.nix
     ./completion.nix
     ./keymappings.nix

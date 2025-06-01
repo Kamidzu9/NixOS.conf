@@ -4,21 +4,28 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    ../modules/pkgs.nix
-    ../modules/fastfetch.nix
-    ../modules/git.nix
-    ../modules/gtk.nix
-    ../modules/hyprland.nix
-    ../modules/kitty.nix
-    ../modules/mc.nix
-    ../modules/mpv.nix
+    # Neovim
     ./modules/neovim/default.nix
-    ../modules/qt.nix
-    ../modules/rofi.nix
-    ../modules/starship.nix
-    ../modules/wallpaper.nix
-    ../modules/waybar.nix
-    ../modules/zshrc.nix
-    ../modules/btop.nix
+
+    # Base-Module
+    ../modules/base/git.nix
+    ../modules/base/pkgs.nix
+    ../modules/base/starship.nix
+    ../modules/base/zshrc.nix
+
+    # CLI-Tools
+    ../modules/cli/btop.nix
+    ../modules/cli/fastfetch.nix
+    ../modules/cli/mc.nix
+    ../modules/cli/mpv.nix
+
+    # Desktop-Programme
+    ../modules/desktop/gtk.nix
+    ../modules/desktop/hyprland/home.nix
+    ../modules/desktop/kitty.nix
+    ../modules/desktop/qt.nix
+    ../modules/desktop/rofi.nix
+    ../modules/desktop/wallpaper.nix
+    ../modules/desktop/waybar.nix
   ];
 }

@@ -1,7 +1,7 @@
 { ... }:
 
 let
-  env = import ../config/env.nix;
+  env = import ../../config/env.nix;
 in
 {
   programs.git = {

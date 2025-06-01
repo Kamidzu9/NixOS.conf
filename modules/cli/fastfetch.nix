@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-{ 
+{
 
   programs.fastfetch = {
 
@@ -87,5 +87,5 @@
     };
   };
 
-  home.file.".config/fastfetch/os_age.sh".text = builtins.readFile ../.config/fastfetch/os_age.sh;
+  home.file.".config/fastfetch/os_age.sh".text = builtins.readFile ../../.config/fastfetch/os_age.sh;
 }

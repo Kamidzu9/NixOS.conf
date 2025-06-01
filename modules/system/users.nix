@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 let
-  # Pfad von hier aus gesehen: modules/system/users.nix → ../.. → env.nix
   env = import ../../config/env.nix;
 in
 {

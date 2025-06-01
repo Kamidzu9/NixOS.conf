@@ -3,7 +3,7 @@
 let
   homeDir = "/home/mischa";
   mcSkinsDir = "${homeDir}/.local/share/mc/skins";
-  catppuccinIni = builtins.readFile ../.config/mc/mc.ini;
+  catppuccinIni = builtins.readFile ../../.config/mc/mc.ini;
 in
 {
   home.activation.symlinkCatppuccin = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
@@ -16,4 +16,3 @@ in
     skin=catppuccin
   '';
 }
-

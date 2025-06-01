@@ -9,28 +9,35 @@ in
 {
   imports = [
     ./hardware-configuration.nix
+
+    # System modules
+    ../modules/system/bluetooth.nix
+    ../modules/system/chkrootkit.nix
     ../modules/system/fileSystems.nix
     ../modules/system/firewall.nix
-    ../modules/system/ssh.nix
-    ../modules/system/security.nix
-    ../modules/system/updates.nix
-    ../modules/system/nix-settings.nix
-    ../modules/system/journald.nix
-    ../modules/system/users.nix
-    ../modules/system/packages.nix
     ../modules/system/fonts.nix
+    ../modules/system/journald.nix
     ../modules/system/localization.nix
-    ../modules/system/chkrootkit.nix
-    ../modules/system/bluetooth.nix
+    ../modules/system/nix-settings.nix
+    ../modules/system/packages.nix
+    ../modules/system/security.nix
+    ../modules/system/ssh.nix
+    ../modules/system/updates.nix
+    ../modules/cli/zsh.nix
+    ../modules/system/users.nix
 
-    ../modules/desktop/hyprland.nix
-    ../modules/desktop/zsh.nix
+    # Desktop/System:
     ../modules/desktop/flatpak.nix
-    ../modules/desktop/docker.nix
-    ../modules/desktop/auto-cpufreq.nix
-    ../modules/desktop/pipewire.nix
     ../modules/desktop/input.nix
+    ../modules/desktop/hyprland/system.nix
+    ../modules/desktop/pipewire.nix
 
+    # Desktop-Services
+    ../modules/desktop/services/auto-cpufreq.nix
+    ../modules/desktop/services/tlp.nix
+    ../modules/desktop/services/docker.nix
+
+    # Home-Manager
     (import "${home-manager}/nixos")
   ];
 
@@ -48,4 +55,3 @@ in
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 }
-

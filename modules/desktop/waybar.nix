@@ -93,7 +93,7 @@
         scroll-step = 5;
       };
     }];
-    style = builtins.readFile ../.config/waybar/style.css;
+    style = builtins.readFile ../../.config/waybar/style.css;
   };
 
   home.file.".config/hypr/scripts/toggle-waybar.sh" = {
@@ -109,4 +109,3 @@
     executable = true;
   };
 }
-
