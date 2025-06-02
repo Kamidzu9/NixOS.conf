@@ -25,5 +25,6 @@
     stylua
     nixfmt-rfc-style
     nodePackages.prettier
+    wlr-randr
   ];
 }
