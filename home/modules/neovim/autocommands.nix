@@ -17,8 +17,8 @@
     {
       event = "FileType";
       pattern = [
-        "tex" # inria
-        "latex" # inria
+        "tex"
+        "latex"
         "markdown"
       ];
       command = "setlocal spell spelllang=en";
@@ -27,6 +27,13 @@
     {
       event = "TextYankPost";
       command = "silent! TSBufDisable highlight";
+    }
+
+    # Use conform.nvim for formatting on save
+    {
+      event = "BufWritePre";
+      pattern = "*";
+      command = "lua require('conform').format({ bufnr = vim.fn.bufnr() })";
     }
   ];
 }

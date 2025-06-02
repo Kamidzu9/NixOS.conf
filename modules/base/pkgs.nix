@@ -22,5 +22,8 @@
     nodePackages.markdownlint-cli
     obs-studio
     tree-sitter
+    stylua
+    nixfmt-rfc-style
+    nodePackages.prettier
   ];
 }

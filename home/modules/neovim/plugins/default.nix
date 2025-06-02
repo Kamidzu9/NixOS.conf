@@ -17,9 +17,9 @@
   ];
 
   programs.nixvim = {
-      colorschemes.catppuccin.enable = true;
+    colorschemes.catppuccin.enable = true;
 
-      plugins = {
+    plugins = {
       # Lazy loading
       lz-n.enable = true;
 
@@ -58,6 +58,28 @@
           ];
         };
       };
+
+      conform-nvim = {
+        enable = true;
+
+        settings = {
+          format_on_Save = {
+            lspFallback = true;
+            timeoutMs = 500;
+          };
+
+          formatters_by_ft = {
+            lua = [ "stylua" ];
+            nix = [ "nixfmt" ];
+            javascript = [ "prettier" ];
+            typescript = [ "prettier" ];
+            markdown = [ "prettier" ];
+            json = [ "prettier" ];
+          };
+        };
+      };
+
     };
+
   };
 }
