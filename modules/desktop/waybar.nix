@@ -9,7 +9,7 @@
         exclusive = true;
         passtrough = false;
         gtk-layer-shell = true;
-        height = 24;
+        height = 28;
         spacing = 5;
         margin-top = 5;
         modules-left = [
@@ -40,15 +40,16 @@
           "separate-outputs" = true;
         };
         "hyprland/workspaces" = {
-          "format" = "{}";
-          "persistent-workspaces" = {
-            "*" = [
-              1
-              2
-              3
-              4
-              5
-            ];
+          "disable-scroll" = true;
+          "all-outputs" = true;
+          "format" = "{icon}";
+          "format-icons" = {
+            "1" = "";
+            "2" = "󰫐";
+            "3" = "󰎇";
+            "4" = "";
+            "5" = "󱌲";
+            "default" = "󰺕";
           };
         };
         battery = {
