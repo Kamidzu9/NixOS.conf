@@ -4,7 +4,6 @@
     extraConfig = ''
           font_family FiraCode Nerd Font
           font_size 16
-          enable_ligatures yes
 
           cursor_shape block
           enable_audio_bell no

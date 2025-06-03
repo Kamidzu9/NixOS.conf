@@ -30,5 +30,6 @@
     nixpkgs-fmt
     clipse
     wl-clipboard
+    swaynotificationcenter
   ];
 }

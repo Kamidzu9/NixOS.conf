@@ -20,6 +20,7 @@
     ../modules/cli/mpv.nix
 
     # Desktop-Programme
+    ../modules/desktop/swaync.nix
     ../modules/desktop/gtk.nix
     ../modules/desktop/hyprland/home.nix
     ../modules/desktop/kitty.nix
