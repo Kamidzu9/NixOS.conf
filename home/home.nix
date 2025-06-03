@@ -25,7 +25,6 @@
     ../modules/desktop/kitty.nix
     ../modules/desktop/qt.nix
     ../modules/desktop/rofi.nix
-    ../modules/desktop/wallpaper.nix
     ../modules/desktop/waybar.nix
   ];
 }

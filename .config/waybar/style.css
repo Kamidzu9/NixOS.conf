@@ -20,7 +20,7 @@
   font-family: "FiraCode Nerd Font", monospace;
   font-size: 18px;
   min-height: 0;
-  transition: background-color 0.3s, border-radius 0.3s;
+  transition: background-color 0.3s, border-radius 0.3s, padding 0.4s;
   box-shadow: none;
   text-shadow: none;
 }
@@ -42,7 +42,7 @@ window#waybar.empty #window {
 }
 
 #workspaces button {
-  padding: 4px 8px;
+  padding: 0px 6px;
   margin: 2px;
   border-radius: 32px;
   color: @subtext0;
@@ -56,6 +56,7 @@ window#waybar.empty #window {
   background-color: @blue;
   color: @crust;
   border-radius: 8px;
+  padding: 0px 18px;
 }
 
 #workspaces button:first-child {
@@ -130,4 +131,3 @@ tooltip {
   padding: 6px;
   border: 1px solid @blue;
 }
-
