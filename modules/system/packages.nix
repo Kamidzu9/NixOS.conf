@@ -28,7 +28,7 @@
     grim
     slurp
     nixpkgs-fmt
+    clipse
     wl-clipboard
   ];
 }
-
