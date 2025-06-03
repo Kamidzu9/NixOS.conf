@@ -1,10 +1,17 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 let
-  nixvim = import (builtins.fetchTarball {
-    url = "https://github.com/nix-community/nixvim/archive/master.tar.gz";
-    sha256 = "15xs42pgvl1vx5ldgzdwjly4im2bcq9vwghvb054i0wxk4n90adq";
-  });
+  nixvim = import (
+    builtins.fetchTarball {
+      url = "https://github.com/nix-community/nixvim/archive/master.tar.gz";
+      sha256 = "0hri2rhfg09rrisz1czkdsayi3qrz7pqwmc0rjlz0vn33ddzg5w0";
+    }
+  );
 in
 {
   imports = [
@@ -22,13 +29,13 @@ in
   home.shellAliases.v = "nvim";
 
   programs.nixvim = {
-    enable                   = true;
-    defaultEditor            = true;
+    enable = true;
+    defaultEditor = true;
     nixpkgs.useGlobalPackages = true;
 
     performance = {
       combinePlugins = {
-        enable            = true;
+        enable = true;
         standalonePlugins = [
           "hmts.nvim"
           "neorg"
@@ -38,8 +45,8 @@ in
       byteCompileLua.enable = true;
     };
 
-    viAlias        = true;
-    vimAlias       = true;
+    viAlias = true;
+    vimAlias = true;
     luaLoader.enable = true;
   };
 }
