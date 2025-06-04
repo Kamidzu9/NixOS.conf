@@ -47,6 +47,8 @@ in
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  security.pam.services.swaylock = { };
+
   networking.hostName = env.myHostname;
   networking.networkmanager.enable = true;
   services.dbus.enable = true;

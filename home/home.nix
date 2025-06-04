@@ -27,5 +27,6 @@
     ../modules/desktop/qt.nix
     ../modules/desktop/rofi.nix
     ../modules/desktop/waybar.nix
+    ../modules/desktop/swaylock.nix
   ];
 }
