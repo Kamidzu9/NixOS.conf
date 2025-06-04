@@ -6,10 +6,18 @@
       nixvimInjections = true;
 
       settings = {
-        ensure_installed = [ "lua" "vim" "nix" "markdown" "latex" "javascript" ];
+        ensure_installed = [
+          "lua"
+          "vim"
+          "nix"
+          "markdown"
+          "latex"
+          "javascript"
+          "rust"
+        ];
         highlight = {
           enable = true;
-          disable = [ "nix" ]; # 👈 тут
+          disable = [ "nix" ];
         };
 
         indent.enable = true;

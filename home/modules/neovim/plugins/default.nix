@@ -75,6 +75,7 @@
             typescript = [ "prettier" ];
             markdown = [ "prettier" ];
             json = [ "prettier" ];
+            rust = [ "rustfmt" ];
           };
         };
       };
