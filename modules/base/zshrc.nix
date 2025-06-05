@@ -1,5 +1,6 @@
 {
   home.file.".zshrc".text = ''
+    [ -n "$IN_NIX_SHELL" ] && echo "🧪 Inside nix-shell with ZSH"
     export HISTFILE="$HOME/.zsh_history"
     HISTSIZE=10000
     SAVEHIST=10000

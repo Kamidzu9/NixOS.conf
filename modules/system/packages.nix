@@ -19,7 +19,7 @@
     wirelesstools
     xwayland
     waybar
-    python314Full
+    # python314Full
     waypaper
     brightnessctl
     libinput-gestures

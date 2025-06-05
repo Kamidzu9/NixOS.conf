@@ -26,9 +26,11 @@
     nixfmt-rfc-style
     nodePackages.prettier
     wlr-randr
-    rustc
-    cargo
-    rustfmt
+    # rustc
+    # cargo
+    # rustfmt
+    direnv
+    nix-direnv
     (prismlauncher.override {
       # Add binary required by some mod
       additionalPrograms = [ ffmpeg ];
