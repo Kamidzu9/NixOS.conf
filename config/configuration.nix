@@ -49,6 +49,8 @@ in
 
   security.pam.services.swaylock = { };
 
+  xdg.mime.enable = true;
+
   networking.hostName = env.myHostname;
   networking.networkmanager.enable = true;
   services.dbus.enable = true;

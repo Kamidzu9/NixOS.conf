@@ -31,5 +31,12 @@
     clipse
     wl-clipboard
     swaynotificationcenter
+    gtk4
+    gsettings-desktop-schemas
+    gnome-themes-extra
   ];
+
+  environment.variables = rec {
+    GSETTINGS_SCHEMA_DIR = "${pkgs.gsettings-desktop-schemas}/share/glib-2.0/schemas";
+  };
 }

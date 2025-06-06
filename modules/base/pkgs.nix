@@ -31,6 +31,7 @@
     # rustfmt
     direnv
     nix-direnv
+    xdg-utils
     (prismlauncher.override {
       # Add binary required by some mod
       additionalPrograms = [ ffmpeg ];
