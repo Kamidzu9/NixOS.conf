@@ -6,8 +6,8 @@ in
 {
   programs.git = {
     enable = true;
-    userName = "${env.myFullName}";
-    userEmail = "${env.myEmail}";
+    userName = "${env.fullName}";
+    userEmail = "${env.email}";
     aliases = {
       co = "checkout";
       ci = "commit";

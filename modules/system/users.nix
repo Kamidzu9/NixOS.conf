@@ -5,9 +5,9 @@ in
 {
   users.users = {
     # dynamisch aus dem env
-    ${env.myUser} = {
+    ${env.user} = {
       isNormalUser = true;
-      description = env.myFullName;
+      description = env.fullName;
       shell = pkgs.zsh;
       extraGroups = [ "networkmanager" "wheel" "docker" ];
     };

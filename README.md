@@ -31,17 +31,13 @@ Minimalistic Cattpuccino NixOS configuration with Home Manager and Hyprland.
    git clone https://github.com/Kamidzu9/NixOS.conf.git
    cd NixOS.conf
    ```
-2. Link the configuration file to `/etc/nixos`:
 
+2. Run the installation script:
    ```bash
-   ln -s ./config/configuration.nix /etc/nixos/configuration.nix
+   ./install.sh
    ```
 
-3. Apply the NixOS configuration:
-   ```bash
-   sudo nixos-rebuild switch
-   ```
-4. Reboot and type Hyprland in CLI
+3. Reboot and type Hyprland in CLI
 
 ## Usage
 
