@@ -74,7 +74,7 @@ window#waybar.empty #window {
 #tray,
 #custom-launcher,
 #window,
-#language {
+#custom-kblayout {
   background-color: @surface0;
   padding: 6px 12px;
   margin: 0 2px;
@@ -89,7 +89,7 @@ window#waybar.empty #window {
 #tray:hover,
 #custom-launcher:hover,
 #window:hover,
-#language:hover {
+#custom-kblayout:hover {
   background-color: rgba(137, 180, 250, 0.76); /* @blue with alpha */
   color: @text-hover;
   border-radius: 8px;

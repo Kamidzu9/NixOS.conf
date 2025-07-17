@@ -4,9 +4,6 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    # Neovim
-    ./modules/neovim/default.nix
-
     # Base-Module
     ../modules/base/git.nix
     ../modules/base/pkgs.nix
