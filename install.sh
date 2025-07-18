@@ -30,5 +30,5 @@ done
 echo "}" >> "$DIR/config/env.nix"
 
 
-ln -sf "$DIR/config/configuration.nix" "/etc/nixos/configuration.nix"
+sudo ln -sf "$DIR/config/configuration.nix" "/etc/nixos/configuration.nix"
 sudo nixos-rebuild switch
