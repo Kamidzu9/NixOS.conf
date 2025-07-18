@@ -41,12 +41,11 @@ Minimalistic Cattpuccino NixOS configuration with Home Manager and Hyprland.
    ```bash
    sudo nixos-rebuild switch
    ```
-4. Reboot and type Hyprland in CLI
+4. Reboot and type `Hyprland` in CLI
 
 ## Usage
 
 - Adjust the package list in `configuration.nix` as needed.
-- To add new plugins to nixvim, edit `./home/modules/neovim/default.nix`.
 
 ## Resources
 
