@@ -1,6 +1,6 @@
 # NixOS.conf
 
-**Author:** Kamidzu9
+**Author:** Kamidzu9 and [RakanMyHusbando](https://github.com/RakanMyHusbando)
 
 ## Description
 
