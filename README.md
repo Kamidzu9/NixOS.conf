@@ -10,13 +10,12 @@ Minimalistic Cattpuccino NixOS configuration with Home Manager and Hyprland.
 
 - **DE/WM:** Hyprland
 - **Shell:** zsh
-- **Editor:** nixvim with plugins
+- **Editor:** vscode
 - **Prompt:** starship
 - **Apps:** swaync, swaylock, waybar, prismlauncher, clipse (copy/paste manager), rofi
 - **Languages/Environments:** Node.js, Python, Rust, Docker
 - Preconfigured NixOS security
 - Preinstalled packages for Node.js, Python, and Rust development
-- nixvim configuration with popular plugins
 
 ## Screenshots
 
