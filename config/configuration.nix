@@ -51,7 +51,7 @@ in
 
   xdg.mime.enable = true;
 
-  networking.hostName = env.myHostname;
+  networking.hostName = env.hostname;
   networking.networkmanager.enable = true;
   services.dbus.enable = true;
 
