@@ -3,7 +3,7 @@ let
 in
 {
   # LUKS
-  boot.initrd.luks.devices."luks-${env.myLuksUUID}".device = "/dev/disk/by-uuid/${env.myLuksUUID}";
+  boot.initrd.luks.devices."luks-${env.luksUUID}".device = "/dev/disk/by-uuid/${env.luksUUID}";
 
   # AppArmor
   security.apparmor.enable = true;
