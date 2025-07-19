@@ -1,4 +1,10 @@
+let 
+  env = import ../../config/env.nix;
+in
 {
+  # LUKS
+  boot.initrd.luks.devices."luks-${env.myLuksUUID}".device = "/dev/disk/by-uuid/${env.myLuksUUID}";
+
   # AppArmor
   security.apparmor.enable = true;
 

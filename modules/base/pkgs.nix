@@ -2,6 +2,8 @@
 
 {
   home.packages = with pkgs; [
+    jq
+    vscode
     wget
     git
     adwaita-icon-theme

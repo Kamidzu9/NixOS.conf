@@ -9,7 +9,7 @@
         exclusive = true;
         passtrough = false;
         gtk-layer-shell = true;
-        height = 28;
+        height = 35;
         spacing = 5;
         margin-top = 5;
         modules-left = [
@@ -19,19 +19,19 @@
         modules-center = [ "clock" ];
         modules-right = [
           "tray"
-          "hyprland/language"
+          "custom/kblayout"
           "backlight"
           "pulseaudio"
           "pulseaudio#microphone"
           "battery"
         ];
-        "hyprland/language" = {
-          "format" = "{}";
-          "format-de" = "de";
-          "format-uk" = "ua";
-          "keyboard-name" = "at-translated-set-2-keyboard";
+        "custom/kblayout" = {
+          "exec" = "~/.config/waybar/scripts/kblayout.sh";
+          "interval" = 3;
+          "tooltip" = false;
         };
         "hyprland/window" = {
+          "swap-icon-label" = true;
           "format" = "{}";
           "rewrite" = {
             "(.*) - Google Chrome" = "  $1";
@@ -118,6 +118,11 @@
       }
     ];
     style = builtins.readFile ../../.config/waybar/style.css;
+  };
+
+  home.file.".config/waybar/scripts/kblayout.sh" = {
+    text = builtins.readFile ../../.config/waybar/scripts/kblayout.sh;
+    executable = true;
   };
 
   home.file.".config/hypr/scripts/toggle-waybar.sh" = {

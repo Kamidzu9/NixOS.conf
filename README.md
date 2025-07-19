@@ -1,6 +1,6 @@
 # NixOS.conf
 
-**Author:** Kamidzu9
+**Author:** Kamidzu9 and [RakanMyHusbando](https://github.com/RakanMyHusbando)
 
 ## Description
 
@@ -10,13 +10,12 @@ Minimalistic Cattpuccino NixOS configuration with Home Manager and Hyprland.
 
 - **DE/WM:** Hyprland
 - **Shell:** zsh
-- **Editor:** nixvim with plugins
+- **Editor:** vscode
 - **Prompt:** starship
 - **Apps:** swaync, swaylock, waybar, prismlauncher, clipse (copy/paste manager), rofi
 - **Languages/Environments:** Node.js, Python, Rust, Docker
 - Preconfigured NixOS security
 - Preinstalled packages for Node.js, Python, and Rust development
-- nixvim configuration with popular plugins
 
 ## Screenshots
 
@@ -37,12 +36,15 @@ Minimalistic Cattpuccino NixOS configuration with Home Manager and Hyprland.
    ./install.sh
    ```
 
-3. Reboot and type Hyprland in CLI
+3. Apply the NixOS configuration:
+   ```bash
+   sudo nixos-rebuild switch
+   ```
+4. Reboot and type `Hyprland` in CLI
 
 ## Usage
 
 - Adjust the package list in `configuration.nix` as needed.
-- To add new plugins to nixvim, edit `./home/modules/neovim/default.nix`.
 
 ## Resources
 
