@@ -5,25 +5,19 @@
 
   imports = [
     # Base-Module
-    ../modules/base/git.nix
-    ../modules/base/pkgs.nix
-    ../modules/base/starship.nix
-    ../modules/base/zshrc.nix
+    ../modules/base
 
     # CLI-Tools
-    ../modules/cli/btop.nix
-    ../modules/cli/fastfetch.nix
-    ../modules/cli/mc.nix
-    ../modules/cli/mpv.nix
+    ../modules/cli
 
     # Desktop-Programme
-    ../modules/desktop/swaync.nix
     ../modules/desktop/gtk.nix
     ../modules/desktop/hyprland/home.nix
     ../modules/desktop/kitty.nix
     ../modules/desktop/qt.nix
     ../modules/desktop/rofi.nix
-    ../modules/desktop/waybar.nix
     ../modules/desktop/swaylock.nix
+    ../modules/desktop/swaync.nix
+    ../modules/desktop/waybar.nix
   ];
 }

@@ -34,6 +34,7 @@
     gtk4
     gsettings-desktop-schemas
     gnome-themes-extra
+    pywal16
   ];
 
   environment.variables = rec {
