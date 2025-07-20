@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    subversion
     dconf
     jq
     vscode
