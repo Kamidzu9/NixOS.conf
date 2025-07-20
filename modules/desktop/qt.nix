@@ -1,12 +1,25 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 
 {
   qt = {
     enable = true;
+
     platformTheme.name = "adwaita";
-    style = {
-      package = pkgs.adwaita-icon-theme;
-      name = "adwaita-dark";
-    };
+
+    style.name = "adwaita-dark";
+  };
+
+  xdg.configFile = {
+    "qt5ct/qt5ct.conf".text = ''
+      [Appearance]
+      style=adwaita-dark
+
+      [Fonts]
+      fixedFont=Monospace
+      font=Sans 10
+
+      [Icon Themes]
+      icon_theme=Adwaita
+    '';
   };
 }

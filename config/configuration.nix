@@ -31,6 +31,7 @@ in
     ../modules/desktop/input.nix
     ../modules/desktop/hyprland/system.nix
     ../modules/desktop/pipewire.nix
+    ../modules/desktop/thunar.nix
 
     # Desktop-Services
     ../modules/desktop/services/auto-cpufreq.nix
@@ -41,7 +42,7 @@ in
     (import "${home-manager}/nixos")
   ];
 
-  home-manager.users.mischa = import ../home/home.nix;
+  home-manager.users.${env.user} = import ../home/home.nix;
 
   system.stateVersion = "25.05";
 
@@ -53,9 +54,16 @@ in
 
   networking.hostName = env.hostname;
   networking.networkmanager.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
   services.dbus.enable = true;
 
   services.devmon.enable = true;
-  services.gvfs.enable = true;
+  services.gvfs.enable = true; # Mount, trash, and other functionalities
+  services.tumbler.enable = true; # Thumbnail support for images
   services.udisks2.enable = true;
 }
