@@ -3,15 +3,23 @@
 {
   qt = {
     enable = true;
+
     platformTheme.name = "adwaita";
-    style = {
-      name = "adwaita-dark";
-      package = pkgs.adwaita-qt;
-    };
+
+    style.name = "adwaita-dark";
   };
 
-  home.sessionVariables = {
-    QT_STYLE_OVERRIDE = "adwaita-dark";
-    QT_QPA_PLATFORMTHEME = "adwaita";
+  xdg.configFile = {
+    "qt5ct/qt5ct.conf".text = ''
+      [Appearance]
+      style=adwaita-dark
+
+      [Fonts]
+      fixedFont=Monospace
+      font=Sans 10
+
+      [Icon Themes]
+      icon_theme=Adwaita
+    '';
   };
 }

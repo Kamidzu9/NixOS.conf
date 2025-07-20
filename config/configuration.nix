@@ -42,7 +42,7 @@ in
     (import "${home-manager}/nixos")
   ];
 
-  home-manager.users.mischa = import ../home/home.nix;
+  home-manager.users.${env.user} = import ../home/home.nix;
 
   system.stateVersion = "25.05";
 
@@ -54,6 +54,12 @@ in
 
   networking.hostName = env.hostname;
   networking.networkmanager.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
   services.dbus.enable = true;
 
   services.devmon.enable = true;

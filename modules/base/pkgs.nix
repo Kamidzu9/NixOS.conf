@@ -2,6 +2,10 @@
 
 {
   home.packages = with pkgs; [
+    libsForQt5.qt5ct
+    krita
+    kdePackages.kdenlive
+    kdePackages.kdeconnect-kde
     subversion
     dconf
     jq
