@@ -1,25 +1,33 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   qt = {
     enable = true;
-
-    platformTheme.name = "adwaita";
-
-    style.name = "adwaita-dark";
+    platformTheme.name = "qtct";
+    style.name = "kvantum";
   };
 
   xdg.configFile = {
-    "qt5ct/qt5ct.conf".text = ''
-      [Appearance]
-      style=adwaita-dark
+    "qt5ct/qt5ct.conf".text = lib.generators.toINI { } {
+      Appearance = {
+        icon_theme = "Papirus-Dark";
+        style = "kvantum";
+      };
+      Fonts = {
+        fixed = "RecMonoLinear Nerd Font,10";
+        general = "Recursive Sans Linear Static,10";
+      };
+    };
 
-      [Fonts]
-      fixedFont=Monospace
-      font=Sans 10
-
-      [Icon Themes]
-      icon_theme=Adwaita
-    '';
+    "qt6ct/qt6ct.conf".text = lib.generators.toINI { } {
+      Appearance = {
+        icon_theme = "Papirus-Dark";
+        style = "kvantum";
+      };
+      Fonts = {
+        fixed = "RecMonoLinear Nerd Font,10";
+        general = "Recursive Sans Linear Static,10";
+      };
+    };
   };
 }

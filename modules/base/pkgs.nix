@@ -3,6 +3,10 @@
 {
   home.packages = with pkgs; [
     libsForQt5.qt5ct
+    qt6Packages.qt6ct
+    qt6Packages.qtstyleplugin-kvantum
+    catppuccin-gtk
+    ayugram-desktop
     krita
     kdePackages.kdenlive
     kdePackages.kdeconnect-kde
@@ -12,6 +16,7 @@
     vscode
     wget
     git
+    adwaita-qt
     adwaita-icon-theme
     google-chrome
     nodejs_24
