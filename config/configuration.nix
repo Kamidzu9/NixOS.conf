@@ -25,6 +25,8 @@ in
     ../modules/system/updates.nix
     ../modules/cli/zsh.nix
     ../modules/system/users.nix
+    ../modules/system/boot.nix
+    ../modules/system/sddm.nix
 
     # Desktop/System:
     ../modules/desktop/flatpak.nix
