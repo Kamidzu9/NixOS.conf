@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    pavucontrol
     chafa
     fzf
     libsForQt5.qt5ct

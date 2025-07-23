@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-hyprctl dispatch exec '[float; center] kitty --title "Wallpaper Picker" bash -c "
+hyprctl dispatch exec '[float; center; size 1550 1000] kitty --title "Wallpaper Picker" bash -c "
   DIRS=(\"\$HOME/github/walls\")
 
   FILE=\$(find \${DIRS[@]} -type f \\( -iname \"*.jpg\" -o -iname \"*.png\" -o -iname \"*.gif\" \\) |
     sed \"s|\$HOME/||\" |
-    fzf --preview \"chafa \$HOME/{} --size=74x74\" \
+    fzf --preview \"chafa \$HOME/{} --size=65x65\" \
         --preview-window=right:60%:wrap \
         --border)
 
