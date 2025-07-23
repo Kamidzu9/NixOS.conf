@@ -1,5 +1,12 @@
 { pkgs, ... }:
-
+let 
+  env = import ../../config/env.nix;
+  osAge = ''birth_install=$(stat -c %W /); 
+current=$(date +%s); 
+time_progression=$((current - birth_install)); 
+days_difference=$((time_progression / 86400)); 
+echo "$days_difference days";'';
+in
 {
 
   programs.fastfetch = {
@@ -16,15 +23,14 @@
       };
 
       logo = {
-        preserveAspectRatio = true;
-        source = "~/github/personal/NixOS.conf/assets/nix-cat.png";
-        type = "kitty";
+        source = "${env.dotfileDir}/assets/nix-cat.png";
         height = 9;
-        padding.left = 1;
+        padding = {
+          left = 1;
+        };
       };
 
       modules = [
-
         "break"
         {
           key = " ";
@@ -71,11 +77,11 @@
           keyColor = "cyan";
         }
 
-	{
-           type = "command";
-	   key = "󱦟 ";
-	   text = "sh ~/.config/fastfetch/os_age.sh";
-	}
+        {
+          type = "command";
+          key = "󱦟 ";
+          text = osAge;
+        }
 
         {
           key = " ";
@@ -86,6 +92,4 @@
       ];
     };
   };
-
-  home.file.".config/fastfetch/os_age.sh".text = builtins.readFile ../../.config/fastfetch/os_age.sh;
 }

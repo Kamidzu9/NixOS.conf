@@ -11,6 +11,7 @@ declare -A defaults=(
     [user]="$USER"
     [fullName]="$USER"
     [email]="foo@bar.com"
+    [dotfileDir]="$DIR"
     [luksUUID]=""
 )
 
