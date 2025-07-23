@@ -1,17 +1,23 @@
 #!/usr/bin/env bash
 
-# Wallpaper-Ordner
-DIRS=(
-  "$HOME/Pictures/Wallpapers"
-)
+hyprctl dispatch exec '[float; center] kitty --title "Wallpaper Picker" bash -c "
+  DIRS=(\"\$HOME/github/walls\")
 
-# Bilder sicher auflisten
-FILES=$(find "${DIRS[@]}" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" -o -iname "*.webp" \))
+  FILE=\$(find \${DIRS[@]} -type f \\( -iname \"*.jpg\" -o -iname \"*.png\" -o -iname \"*.gif\" \\) |
+    sed \"s|\$HOME/||\" |
+    fzf --preview \"chafa \$HOME/{} --size=74x74\" \
+        --preview-window=right:60%:wrap \
+        --border)
 
-# Auswahl per rofi
-CHOSEN=$(printf '%s\n' $FILES | rofi -dmenu -p "Wähle Wallpaper")
+  [[ -z \"\$FILE\" ]] && exit 0
 
-[ -z "$CHOSEN" ] && exit
+  FILE=\"\$HOME/\$FILE\"
+  
+  # Set wallpaper with swww
+  swww img \"\$FILE\" --transition-type any --transition-duration 1
+  
+  # Generate and apply pywal colors from chosen wallpaper
+  wal -i \"\$FILE\" --saturate 0.8 --backend imagemagick
 
-# Wallpaper setzen mit swww
-swww img "$CHOSEN" --transition-type any --transition-duration 1
+  read -n 1 -s -r -p \"Drücke eine Taste zum Schließen...\"
+"'

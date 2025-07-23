@@ -4,5 +4,5 @@
     ./pkgs.nix
     ./starship.nix
     ./zshrc.nix
-  ]
+  ];
 }

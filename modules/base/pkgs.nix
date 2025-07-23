@@ -2,6 +2,8 @@
 
 {
   home.packages = with pkgs; [
+    chafa
+    fzf
     libsForQt5.qt5ct
     qt6Packages.qt6ct
     qt6Packages.qtstyleplugin-kvantum

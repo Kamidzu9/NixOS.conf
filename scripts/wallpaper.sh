@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 trap "echo -e '\nProgram interrupted (Ctrl+c)'; wal -R -q; exit" SIGINT
 
-WALLPAPER_DIR=${WALLPAPER_DIR:-"$HOME/Pictures/Wallpaper"} # TODO: change default wallpaper-dir @Kamidzu9  
+WALLPAPER_DIR=${WALLPAPER_DIR:-"$HOME/github/walls"} # TODO: change default wallpaper-dir @Kamidzu9  
 SCRIPT_DIR=$(dirname $(realpath "${BASH_SOURCE[0]}"))
 
 MIN_CONTRAST=0.0
