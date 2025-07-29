@@ -4,7 +4,8 @@
 
 ## Description
 
-Minimalistic Cattpuccino NixOS configuration with Home Manager and Hyprland.
+Minimalistic Catppuccin-themed NixOS configuration with Home Manager and Hyprland.  
+Includes a curated set of packages, desktop environment, CLI tools, and custom scripts for a modern, productive workflow.
 
 ## Features
 
@@ -14,8 +15,9 @@ Minimalistic Cattpuccino NixOS configuration with Home Manager and Hyprland.
 - **Prompt:** starship
 - **Apps:** swaync, swaylock, waybar, prismlauncher, clipse (copy/paste manager), rofi
 - **Languages/Environments:** Node.js, Python, Rust, Docker
-- Preconfigured NixOS security
+- Preconfigured NixOS security and system hardening
 - Preinstalled packages for Node.js, Python, and Rust development
+- Custom wallpapers, pywal16 color integration, and themed configs for btop, mc, rofi, waybar, swaylock, etc.
 
 ## Screenshots
 
@@ -40,13 +42,21 @@ Minimalistic Cattpuccino NixOS configuration with Home Manager and Hyprland.
    ```bash
    sudo nixos-rebuild switch
    ```
-4. Reboot and type `Hyprland` in CLI
+
+4. Reboot and type `Hyprland` in CLI to start the desktop environment.
 
 ## Usage
 
-- Adjust the package list in `configuration.nix` as needed.
+- Adjust the package list in [`config/configuration.nix`](config/configuration.nix) as needed.
+- Customize user/environment variables in [`config/env.nix`](config/env.nix) (see [`config/env.nix.example`](config/env.nix.example)).
+- Wallpapers and scripts are in [`assets/`](assets/) and [`scripts/`](scripts/).
+- Home Manager modules are in [`modules/`](modules/).
 
 ## Resources
 
 - [NixOS Handbook](https://nixos.org/manual/nixos/stable/)
 - [Home Manager](https://github.com/nix-community/home-manager)
+
+## License
+
+See [LICENSE](LICENSE) if present.

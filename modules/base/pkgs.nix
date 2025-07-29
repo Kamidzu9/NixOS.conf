@@ -2,57 +2,67 @@
 
 {
   home.packages = with pkgs; [
-    pavucontrol
-    chafa
-    fzf
-    libsForQt5.qt5ct
-    qt6Packages.qt6ct
-    qt6Packages.qtstyleplugin-kvantum
-    catppuccin-gtk
-    ayugram-desktop
-    krita
-    kdePackages.kdenlive
-    kdePackages.kdeconnect-kde
-    subversion
-    dconf
-    jq
-    vscode
-    wget
-    git
-    adwaita-qt
-    adwaita-icon-theme
-    google-chrome
-    nodejs_24
+    # Essentials
     coreutils
     findutils
+    wget
+    git
+    jq
+    dconf
+    xdg-utils
+    direnv
+    nix-direnv
+
+    # Editors & IDEs
+    vscode
     libreoffice
+    gimp
+    krita
     mc
     btop
+
+    # Audio & Video
+    pavucontrol
     pamixer
-    gimp
+    obs-studio
+    wlr-randr
+
+    # Development tools
     gcc
     lua-language-server
     pyright
     prettierd
     black
-    nodePackages.markdownlint-cli
-    obs-studio
-    tree-sitter
     stylua
     nixfmt-rfc-style
+    tree-sitter
+    nodejs_24
+    nodePackages.markdownlint-cli
     nodePackages.prettier
-    wlr-randr
     # rustc
     # cargo
     # rustfmt
-    direnv
-    nix-direnv
-    xdg-utils
-    (prismlauncher.override {
-      # Add binary required by some mod
-      additionalPrograms = [ ffmpeg ];
 
-      # Change Java runtimes available to Prism Launcher
+    # Qt & KDE
+    libsForQt5.qt5ct
+    qt6Packages.qt6ct
+    qt6Packages.qtstyleplugin-kvantum
+    adwaita-qt
+    adwaita-icon-theme
+    catppuccin-gtk
+    kdePackages.kdenlive
+    kdePackages.kdeconnect-kde
+
+    # Misc
+    chafa
+    gh
+    ayugram-desktop
+    google-chrome
+    subversion
+
+    # Games & Launchers
+    (prismlauncher.override {
+      additionalPrograms = [ ffmpeg ];
       jdks = [
         graalvm-ce
         zulu8
