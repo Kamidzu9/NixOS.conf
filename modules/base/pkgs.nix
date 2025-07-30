@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    # Essentials
+    # --- Essentials ---
     coreutils
     findutils
     wget
@@ -12,8 +12,20 @@
     xdg-utils
     direnv
     nix-direnv
+    tree-sitter
 
-    # Editors & IDEs
+    # --- Development ---
+    gcc
+    lua-language-server
+    pyright
+    prettierd
+    black
+    nodePackages.markdownlint-cli
+    nodePackages.prettier
+    stylua
+    nixfmt-rfc-style
+
+    # --- Editors & IDEs ---
     vscode
     libreoffice
     gimp
@@ -21,46 +33,36 @@
     mc
     btop
 
-    # Audio & Video
+    # --- Audio & Video ---
     pavucontrol
     pamixer
     obs-studio
-    wlr-randr
 
-    # Development tools
-    gcc
-    lua-language-server
-    pyright
-    prettierd
-    black
-    stylua
-    nixfmt-rfc-style
-    tree-sitter
-    nodejs_24
-    nodePackages.markdownlint-cli
-    nodePackages.prettier
-    # rustc
-    # cargo
-    # rustfmt
-
-    # Qt & KDE
+    # --- KDE/Qt ---
     libsForQt5.qt5ct
     qt6Packages.qt6ct
     qt6Packages.qtstyleplugin-kvantum
+    kdePackages.kdenlive
+    kdePackages.kdeconnect-kde
     adwaita-qt
     adwaita-icon-theme
     catppuccin-gtk
-    kdePackages.kdenlive
-    kdePackages.kdeconnect-kde
 
-    # Misc
-    chafa
-    gh
-    ayugram-desktop
+    # --- Browsers ---
     google-chrome
-    subversion
 
-    # Games & Launchers
+    # --- Misc ---
+    gh
+    chafa
+    fzf
+    ayugram-desktop
+    subversion
+    wlr-randr
+
+    # --- Node.js ---
+    nodejs_24
+
+    # --- Minecraft Launcher ---
     (prismlauncher.override {
       additionalPrograms = [ ffmpeg ];
       jdks = [
@@ -70,5 +72,10 @@
         zulu
       ];
     })
+
+    # --- Rust (commented out) ---
+    # rustc
+    # cargo
+    # rustfmt
   ];
 }
