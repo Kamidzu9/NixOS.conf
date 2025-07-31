@@ -13,6 +13,7 @@
     direnv
     nix-direnv
     tree-sitter
+    tree
 
     # --- Development ---
     gcc
