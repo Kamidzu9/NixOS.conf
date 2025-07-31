@@ -22,7 +22,7 @@ Includes a curated set of packages, desktop environment, CLI tools, and custom s
 ## Screenshots
 
 ![Hyprland Workspace](./assets/hyprland_workspace.png)
-![nixvim in action](./assets/nixvim.png)
+~~[nixvim in action](./assets/nixvim.png)~~
 ![Midnight Commander](./assets/mc.png)
 
 ## Installation Instructions
